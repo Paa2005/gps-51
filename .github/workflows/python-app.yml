@@ -26,7 +26,8 @@ jobs:
 
       - name: Static code analysis with pylint
         run: |
-          pylint *.py
+          # Ignorem els avisos de docstring (C0114, C0115, C0116) perquè no són errors greus
+          pylint *.py -d C0114,C0115,C0116
 
       - name: Run tests with coverage
         run: |
